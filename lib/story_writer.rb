@@ -12,6 +12,11 @@ class StoryWriter < Sinatra::Base
     erb :story
   end
 
+  post '/create_story' do
+    @newline = params["input-box-0"]
+    erb :story
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

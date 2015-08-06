@@ -2,12 +2,62 @@
 <html>
   <head>
 
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <title>Multi-Path Story Writer</title>
 
   </head>
   <body>
 
     Write your first line in the center box!
+
+    <table>
+      <tr>
+        <td></td>
+        <td>
+          <form action="/create_story" method="post">
+            <input name="input-box-1" type="text" placeholder="Enter text here...">
+            <input type="submit">
+          </form>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <form action="/create_story" method="post">
+            <input name="input-box-2" type="text" placeholder="Enter text here...">
+            <input type="submit">
+          </form>
+        </td>
+        <td class="previous-phrase">
+
+          <% if @newline %>
+            <a class="actualphrase" href="#"><%= @newline %></a>
+          <% else %>
+            <form action="/create_story" method="post">
+              <input name="input-box-0" type="text" placeholder="Enter text here...">
+              <input value="Submit" type="submit">
+            </form>
+          <% end %>
+
+        </td>
+        <td>
+          <form action="/create_story" method="post">
+            <input name="input-box-3" type="text" placeholder="Enter text here...">
+            <input value="Submit" type="submit">
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <form action="/create_story" method="post">
+            <input name="input-box-4" type="text" placeholder="Enter text here...">
+            <input type="submit">
+          </form>
+        </td>
+        <td></td>
+      </tr>
+    </table>
 
   </body>
 </html>

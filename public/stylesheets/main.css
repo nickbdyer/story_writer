@@ -1,0 +1,15 @@
+table, tr, td {
+  border: solid 1px black;
+  border-spacing: 2px;
+  border-color: gray;
+  border-collapse: collapse;
+  margin-left: 15px;
+}
+
+tr {
+  height:25px;
+}
+
+td {
+  width:25px;
+}
