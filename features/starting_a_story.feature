@@ -13,3 +13,9 @@ Feature: Writing a story
     When I fill in "input-box-0" with "Once upon a time..." 
     And I press "Submit" within ".previous-phrase"
     Then I should see "Once upon a time..." within ".previous-phrase"
+
+  Scenario: Writing the next lines
+    Given I go to the create_story page
+    When I fill in "input-box-1" with "There was a tiger" 
+    And I press "Submit" within ".phrase1"
+    Then I should see "There was a tiger" within ".phrase1"

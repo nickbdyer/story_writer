@@ -13,25 +13,33 @@
     <table>
       <tr>
         <td></td>
-        <td>
-          <form action="/create_story" method="post">
-            <input name="input-box-1" type="text" placeholder="Enter text here...">
-            <input type="submit">
-          </form>
+        <td class="phrase1">
+          <% if @phrase1 %>
+            <%= @phrase1 %>
+          <% else %>
+            <form action="/create_story" method="post">
+              <input name="input-box-1" type="text" placeholder="Enter text here...">
+              <input value="Submit" type="submit">
+            </form>
+          <% end %>
         </td>
         <td></td>
       </tr>
       <tr>
-        <td>
-          <form action="/create_story" method="post">
-            <input name="input-box-2" type="text" placeholder="Enter text here...">
-            <input type="submit">
-          </form>
+        <td class="phrase2">
+          <% if @phrase2 %>
+            <%= @phrase2 %>
+          <% else %>
+            <form action="/create_story" method="post">
+              <input name="input-box-2" type="text" placeholder="Enter text here...">
+              <input value="Submit" type="submit">
+            </form>
+          <% end %>
         </td>
         <td class="previous-phrase">
 
           <% if @newline %>
-            <a class="actualphrase" href="#"><%= @newline %></a>
+            <%= @newline %>
           <% else %>
             <form action="/create_story" method="post">
               <input name="input-box-0" type="text" placeholder="Enter text here...">
@@ -40,25 +48,32 @@
           <% end %>
 
         </td>
-        <td>
-          <form action="/create_story" method="post">
-            <input name="input-box-3" type="text" placeholder="Enter text here...">
-            <input value="Submit" type="submit">
-          </form>
+        <td class="phrase3">
+          <% if @phrase3 %>
+            <%= @phrase3 %>
+          <% else %>
+            <form action="/create_story" method="post">
+              <input name="input-box-3" type="text" placeholder="Enter text here...">
+              <input value="Submit" type="submit">
+            </form>
+          <% end %>
         </td>
       </tr>
       <tr>
         <td></td>
-        <td>
-          <form action="/create_story" method="post">
-            <input name="input-box-4" type="text" placeholder="Enter text here...">
-            <input type="submit">
-          </form>
+        <td class="phrase4">
+          <% if @phrase4 %>
+            <%= @phrase4 %>
+          <% else %>
+            <form action="/create_story" method="post">
+              <input name="input-box-4" type="text" placeholder="Enter text here...">
+              <input value="Submit" type="submit">
+            </form>
+          <% end %>
         </td>
         <td></td>
       </tr>
     </table>
-
   </body>
 </html>
 

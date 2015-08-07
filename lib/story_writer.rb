@@ -14,6 +14,10 @@ class StoryWriter < Sinatra::Base
 
   post '/create_story' do
     @newline = params["input-box-0"]
+    @phrase1 = params["input-box-1"]
+    @phrase2 = params["input-box-2"]
+    @phrase3 = params["input-box-3"]
+    @phrase4 = params["input-box-4"]
     erb :story
   end
 
