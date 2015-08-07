@@ -1,14 +1,18 @@
 require 'sinatra/base'
+require_relative 'story'
 
 class StoryWriter < Sinatra::Base
 
   set :views, Proc.new { File.join(root, "..", "views") }
+
+  STORY = Story.new
 
   get '/' do
     erb :index
   end
 
   get '/create_story' do
+    STORY.parent_reference = "0"
     erb :story
   end
 
