@@ -53,4 +53,16 @@ describe Story do
     expect(story.retrieve_line("0BC")).to eq "The bear was thirsty"
   end
 
+  it "can collect child lines of a given parent line" do
+    story = Story.new()
+    story.add_line("Once upon a time...", "A")
+    story.parent_reference = "0"
+    story.add_line("There was a tiger", "A")
+    story.add_line("There was a bear", "B")
+    story.parent_reference = "0B"
+    story.add_line("The bear was hungry", "A")
+    story.add_line("The bear was thirsty", "C")
+    expect(story.collect_child_lines_of("0B")).to eq ["The bear was hungry", nil, "The bear was thirsty", nil]
+  end
+
 end
