@@ -10,12 +10,12 @@ class Story
   end
 
   def add_line(sentence, reference)
-    @story[reference] = sentence
-    check_content
+    @story[@parent_reference + reference] = sentence
   end
 
-  def check_content
+  def list_content
     @content = @story.values
+    @content
   end
 
   def retrieve_line(reference)
