@@ -14,11 +14,12 @@
       <tr>
         <td></td>
         <td class="phrase1">
-          <% if @phrase1 %>
-            <%= @phrase1 %>
+          <% if @child_lines[0] %>
+            <%= @child_lines[0] %>
           <% else %>
-            <form action="/create_story" method="post">
-              <input name="input-box-1" type="text" placeholder="Enter text here...">
+            <form action="/add_line" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="text" value="A">
               <input value="Submit" type="submit">
             </form>
           <% end %>
@@ -27,33 +28,36 @@
       </tr>
       <tr>
         <td class="phrase2">
-          <% if @phrase2 %>
-            <%= @phrase2 %>
+          <% if @child_lines[1] %>
+            <%= @child_lines[1] %>
           <% else %>
-            <form action="/create_story" method="post">
-              <input name="input-box-2" type="text" placeholder="Enter text here...">
+            <form action="/add_line" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="text" value="B">
               <input value="Submit" type="submit">
             </form>
           <% end %>
         </td>
         <td class="previous-phrase">
 
-          <% if @newline %>
-            <%= @newline %>
+          <% if @current_line %>
+            <%= @current_line %>
           <% else %>
-            <form action="/create_story" method="post">
-              <input name="input-box-0" type="text" placeholder="Enter text here...">
+            <form action="/first_line" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="text" value="0">
               <input value="Submit" type="submit">
             </form>
           <% end %>
 
         </td>
         <td class="phrase3">
-          <% if @phrase3 %>
-            <%= @phrase3 %>
+          <% if @child_lines[2] %>
+            <%= @child_lines[2] %>
           <% else %>
-            <form action="/create_story" method="post">
-              <input name="input-box-3" type="text" placeholder="Enter text here...">
+            <form action="/add_line" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="text" value="C">
               <input value="Submit" type="submit">
             </form>
           <% end %>
@@ -62,11 +66,12 @@
       <tr>
         <td></td>
         <td class="phrase4">
-          <% if @phrase4 %>
-            <%= @phrase4 %>
+          <% if @child_lines[3] %>
+            <%= @child_lines[3] %>
           <% else %>
-            <form action="/create_story" method="post">
-              <input name="input-box-4" type="text" placeholder="Enter text here...">
+            <form action="/add_line" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="text" value="D">
               <input value="Submit" type="submit">
             </form>
           <% end %>
