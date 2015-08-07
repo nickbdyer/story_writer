@@ -16,6 +16,8 @@ Feature: Writing a story
 
   Scenario: Writing the next lines
     Given I go to the create_story page
+    And I have written the first line already
     When I fill in "input-box-1" with "There was a tiger" 
     And I press "Submit" within ".phrase1"
     Then I should see "There was a tiger" within ".phrase1"
+    And I should see "Once upon a time..." within ".previous-phrase"
