@@ -22,10 +22,10 @@ Feature: Writing a story
     Then I should see "There was a tiger" within ".lineA"
     And I should see "Once upon a time..." within ".previous-phrase"
 
-  Scenario: Writing the next lines
+  Scenario: Writing the 3rd lines
     Given I go to the create_story page
     And I have written the first line already
     When I fill in "newline" with "There was a tiger" within ".lineA" 
     And I press "Submit" within ".lineA"
-    Then I should see "There was a tiger" within ".lineA"
-    And I should see "Once upon a time..." within ".previous-phrase"
+    And I press the link "There was a tiger" within ".lineA"
+    Then I should see "There was a tiger" within ".previous-phrase"
