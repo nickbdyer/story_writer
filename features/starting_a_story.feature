@@ -10,14 +10,14 @@ Feature: Writing a story
 
   Scenario: Writing the first line
     Given I go to the create_story page
-    When I fill in "input-box-0" with "Once upon a time..." 
+    When I fill in "newline" with "Once upon a time..." within ".previous-phrase" 
     And I press "Submit" within ".previous-phrase"
     Then I should see "Once upon a time..." within ".previous-phrase"
 
   Scenario: Writing the next lines
     Given I go to the create_story page
     And I have written the first line already
-    When I fill in "input-box-1" with "There was a tiger" 
-    And I press "Submit" within ".phrase1"
-    Then I should see "There was a tiger" within ".phrase1"
+    When I fill in "newline" with "There was a tiger" within ".lineA" 
+    And I press "Submit" within ".lineA"
+    Then I should see "There was a tiger" within ".lineA"
     And I should see "Once upon a time..." within ".previous-phrase"

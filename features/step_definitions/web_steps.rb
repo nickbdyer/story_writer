@@ -26,7 +26,13 @@ end
 
 Given(/^I have written the first line already$/) do
   page.within(:css, ".previous-phrase") do
-    fill_in "input-box-0", with: "Once upon a time..."
+    fill_in "newline", with: "Once upon a time..."
     click_button "Submit"
+  end
+end
+
+When(/^I fill in "([^"]*)" with "([^"]*)" within "([^"]*)"$/) do |arg1, arg2, arg3|
+  page.within(:css, "#{arg3}") do
+    fill_in "#{arg1}", with: "#{arg2}"
   end
 end
