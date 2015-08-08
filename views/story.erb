@@ -15,7 +15,7 @@
         <td></td>
         <td class="lineA">
           <% if @child_lines[0] %>
-            <a href="#"><%= @child_lines[0] %></a>
+            <a href="/select_line/A"><%= @child_lines[0] %></a>
           <% else %>
             <form action="/add_line" method="post">
               <input name="newline" type="text" placeholder="Enter text here...">
@@ -67,7 +67,7 @@
         <td></td>
         <td class="lineD">
           <% if @child_lines[3] %>
-            <a href="#"><%= @child_lines[3] %></a>
+            <a href="/select_line/D"><%= @child_lines[3] %></a>
           <% else %>
             <form action="/add_line" method="post">
               <input name="newline" type="text" placeholder="Enter text here...">

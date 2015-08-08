@@ -32,9 +32,10 @@ class StoryWriter < Sinatra::Base
     erb :story
   end
 
-  post '/select_line' do
-    @current_line = STORY.retrieve_line(params["reference"])
-    @child_lines = STORY.collect_child_lines_of(params["reference"])
+  get '/select_line/:id' do
+    STORY.parent_reference = STORY.parent_reference + params[:id]
+    @current_line = STORY.retrieve_line(STORY.parent_reference)
+    @child_lines = STORY.collect_child_lines_of(STORY.parent_reference)
     erb :story
   end
 
