@@ -44,7 +44,7 @@
           <% if @current_line %>
             <%= @current_line %>
           <% else %>
-            <form action="/first_line" method="post">
+            <form action="/lines/new" method="post">
               <input name="newline" type="text" placeholder="Enter text here...">
               <input name="reference" type="hidden" value="0">
               <input value="Submit" type="submit">

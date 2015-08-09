@@ -13,6 +13,12 @@ class StoryWriter < Sinatra::Base
     erb :index
   end
 
+  post '/stories/new' do
+    @@story = Story.new
+    @child_lines = []
+    erb :story
+  end
+
   get '/stories/1' do
     @@story.parent_reference = "0"
     @current_line = @@story.retrieve_line(@@story.parent_reference)
@@ -20,23 +26,9 @@ class StoryWriter < Sinatra::Base
     erb :story
   end
 
-  post '/stories/new' do
-    @@story = Story.new
-    @child_lines = []
-    erb :story
-  end
-
-
-  post '/first_line' do
-    @@story.add_line(params["newline"], params["reference"])
-    @@story.parent_reference = "0"
-    @current_line = @@story.retrieve_line(params["reference"])
-    @child_lines = @@story.collect_child_lines_of(@@story.parent_reference)
-    erb :story
-  end
-
   post '/lines/new' do
     @@story.add_line(params["newline"], params["reference"])
+    @@story.parent_reference = "0" if params["reference"] == "0"
     @current_line = @@story.retrieve_line(@@story.parent_reference)
     @child_lines = @@story.collect_child_lines_of(@@story.parent_reference)
     erb :story
