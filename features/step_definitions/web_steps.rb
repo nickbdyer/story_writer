@@ -16,8 +16,9 @@ Then(/^I should see "([^"]*)" within "([^"]*)"$/) do |arg1, arg2|
   end
 end
 
-Given(/^I go to the create_story page$/) do
-  visit '/create_story'
+Given(/^I am on the first page of the story$/) do
+  steps 'Given I am on the homepage'
+  steps 'When I press "New Story" within "body" '
 end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|

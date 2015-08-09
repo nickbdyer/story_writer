@@ -12,7 +12,12 @@ class StoryWriter < Sinatra::Base
     erb :index
   end
 
-  get '/create_story' do
+  get '/stories/1' do
+    @child_lines = []
+    erb :story
+  end
+
+  post '/stories/new' do
     @child_lines = []
     erb :story
   end
@@ -25,14 +30,14 @@ class StoryWriter < Sinatra::Base
     erb :story
   end
 
-  post '/add_line' do
+  post '/lines/new' do
     STORY.add_line(params["newline"], params["reference"])
     @current_line = STORY.retrieve_line(STORY.parent_reference)
     @child_lines = STORY.collect_child_lines_of(STORY.parent_reference)
     erb :story
   end
 
-  get '/select_line/:id' do
+  get '/lines/:id' do
     STORY.parent_reference = STORY.parent_reference + params[:id]
     @current_line = STORY.retrieve_line(STORY.parent_reference)
     @child_lines = STORY.collect_child_lines_of(STORY.parent_reference)
