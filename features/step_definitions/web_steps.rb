@@ -21,6 +21,21 @@ Given(/^I am on the first page of the story$/) do
   steps 'When I press "New Story" within "body" '
 end
 
+Given(/^I have written multiple lines of a story$/) do
+  steps 'Given I am on the homepage'
+  steps 'When I press "New Story" within "body" '
+  steps 'Given I have written the first line already'
+  steps 'When I fill in "newline" with "There was a tiger" within ".lineA"'
+  steps 'When I press "Submit" within ".lineA"'
+  steps 'When I fill in "newline" with "There was a bear" within ".lineB"'
+  steps 'When I press "Submit" within ".lineB"'
+  steps 'When I press the link "There was a tiger" within ".lineA"'
+  steps 'When I fill in "newline" with "Who was not friendly" within ".lineA"'
+  steps 'When I press "Submit" within ".lineA"'
+  steps 'When I press the link "Who was not friendly" within ".lineA"'
+  steps 'Then I should see "Who was not friendly" within ".previous-phrase"'
+end
+
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
     fill_in "#{arg1}", with: "#{arg2}"
 end

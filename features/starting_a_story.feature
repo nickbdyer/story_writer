@@ -29,3 +29,10 @@ Feature: Writing a story
     And I press "Submit" within ".lineA"
     And I press the link "There was a tiger" within ".lineA"
     Then I should see "There was a tiger" within ".previous-phrase"
+
+  Scenario: Going back to the start of the story
+    Given I have written multiple lines of a story
+    And I press the link "Back to the start" within "body"
+    Then I should see "Once upon a time..." within ".previous-phrase"
+    And I should see "There was a tiger" within ".lineA"
+    And I should see "There was a bear" within ".lineB"

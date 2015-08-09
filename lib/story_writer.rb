@@ -13,7 +13,9 @@ class StoryWriter < Sinatra::Base
   end
 
   get '/stories/1' do
-    @child_lines = []
+    STORY.parent_reference = "0"
+    @current_line = STORY.retrieve_line(STORY.parent_reference)
+    @child_lines = STORY.collect_child_lines_of(STORY.parent_reference)
     erb :story
   end
 
