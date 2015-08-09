@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <title>Multi-Path Story Writer</title>
+
+  </head>
+  <body>
+
+    Write your first line in the center box!
+    <a href="/stories/1">Back to the start</a>
+
+    <table>
+      <tr>
+        <td></td>
+        <td class="lineA">
+          
+            <form action="/lines/new" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="hidden" value="A">
+              <input value="Submit" type="submit">
+            </form>
+          
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lineB">
+          
+            <form action="/lines/new" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="hidden" value="B">
+              <input value="Submit" type="submit">
+            </form>
+          
+        </td>
+        <td class="previous-phrase">
+
+          
+            Once upon a time...
+          
+
+        </td>
+        <td class="lineC">
+          
+            <form action="/lines/new" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="hidden" value="C">
+              <input value="Submit" type="submit">
+            </form>
+          
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="lineD">
+          
+            <form action="/lines/new" method="post">
+              <input name="newline" type="text" placeholder="Enter text here...">
+              <input name="reference" type="hidden" value="D">
+              <input value="Submit" type="submit">
+            </form>
+          
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
