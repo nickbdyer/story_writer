@@ -15,11 +15,11 @@ I felt that there were two classes in the domain, Stories and Lines. However,
 given that I was taking a shortcut to only allow one Story, I combined the two.
 
 I took a traditional BDD approach, by starting with Cucumber to write my
-feature tests, during my second scenario, I had to complete some of the model
+acceptance tests. During my second scenario, I had to complete some of the model
 developement in order to get it to pass. This led me to my TDD unit testing
 with Rspec. I continued in this cycle, until all the features of the app were
 complete. At which point, I tidied up some of the naming that I felt was
-inconsistent, and refactored the codebase.
+inconsistent, and refactored the codebase. 
 
 ### Shortcuts
 Currently the story writer suits users who want to take the "Happy Path". For
